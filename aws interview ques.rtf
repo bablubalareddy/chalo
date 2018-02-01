@@ -1,0 +1,670 @@
+{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}{\f1\fnil\fcharset0 Times New Roman;}}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang1033\f0\fs22\par
+\ul\b\f1\fs28 Basic Interview Questions -- AWS\par
+\ulnone\b0\par
+=> \b Creating an Elastic Load Balancer Steps\par
+\b0 Navigate to EC2\par
+Scroll down the left scroll bar and select Load Balancer.\par
+Click create load balancer in the top left.\par
+Choose between application or classic load balancer.\par
+Name your load balancer.\par
+Select the VPC the load balancer will run in\par
+Select the proper protocol the ELB is going to balance.\par
+Assign or create a security groups.\par
+Configure health check\par
+Click add EC2 instances\par
+Add tags\par
+Review and create\par
+\par
+=> \b DNS Servers\b0  :-\par
+Domain Name System Server is a database comprised of human readable domain names and their corresponding numeric IP addresses.\par
+\par
+=> \b RRS (Reduced Redundancy Storage)\par
+\b0 An object Classification as non critical, reproducible objects. Less expensive then standard class. 99.99% Durability, 99.99% Availability. Best used for back-up or reproducible files.\par
+\par
+=> \b Instance Chain to the Internet\b0\par
+EC2 must have a public IP address.\par
+Must be allowed to access the internet though the Security Group.\par
+Must be allowed to access the internet though the NACL.\par
+Must have IGW access in the Router Tables.\par
+Must be attached to the internet at the Gateway.\par
+Access the internet.\par
+\par
+=> \b steps to Launch Instance\b0\par
+Launch instance button, on resources group.\par
+Select AMI\par
+Select instance type\par
+Configure the instance, Number of instances, Select or create VPC, Select or create subnet, Auto assign IP if needed, Select or create IAM role, etc.\par
+Optionally run a script.\par
+Configure and add storage.\par
+Optionally add a tag.\par
+Select or create a security group.\par
+View summary of instance \par
+Launch instance\par
+Select or create a SSH key pair.\par
+Make note of or download SSH key.\par
+Launch instance again.\par
+AWS configure and launches instance.\par
+\par
+=> \b Route 53\b0\par
+An AWS tool used to register domain names, translates human readable domain names into numeric addresses and checks the health of your domain by making sure it is reachable, available and functional.\par
+\par
+=> \b Steps to SSH Tunnel to Private Subnet and Create a DB\par
+Create a subnet DB group\b0\par
+Add private subnets to availability zones and subnet ID.\par
+Launch DB instance. \par
+Select DB engine. \par
+Select if this DB is going to be used for production.\par
+Toggle free tier option box, if you are using free tier.\par
+Set a DB ID, username and password.\par
+Select VPC \par
+Select newly created DB subnet group.\par
+Choose if this subnet is public accessible or not.\par
+No preference is fine for availability zone selection.\par
+Create a security group with pot 3306 open.\par
+Create a name for this DB.\par
+Create the DB instance and wait 5 to 10 minutes.\par
+Note endpoint and port in the configuration details.\par
+\par
+\par
+=> \b EC2\b0\par
+Elastic Compute Cloud is a computer at an Amazon data center, that a user can connect to and use. The compute power, storage, ram and amount of virtual machines can expand and shrink on demand, as needed.\par
+\par
+=> \b Private Subnets\b0\par
+Sub networks that do not have access to the internet but are able to have access to other subnets in a network that are public subnets.\par
+\par
+\par
+=> \b Default Security Group Rules\par
+\b0 All inbound traffic is denied and outbound traffic is allowed by default. To set these rules a admin makes rules to allow certain inbound traffic and rules to deny certain outbound traffic.\par
+\par
+=> \b Create Admin Users (Security Status List)\par
+\b0 Create an administrative user for day to day use of AWS and log in as this new user, instead of the root user, to better secure the root user's account. The instruction and link for this task in in the pull down arrow of the task itself.\par
+\par
+=> \b Availability Zones\par
+\b0 An isolated data center keep far enough from another data center to raise the chances of the centers survival in case of a local disaster.\par
+\par
+=> \b Publisher\b0\par
+The message being sent to the endpoint, either automated or human typed message.\par
+\par
+=> \b Standard Classification\b0\par
+The all purpose, default classification of an object. The most expensive of storage classes.99.99999999999% Durability, 99.99% Availability. Best for frequently accessed or extremely important files.\par
+\par
+=> \b Lifecycle Configuration\b0\par
+A lifecycle is configured in the properties of the bucket level.\par
+\par
+=> \b Storage Durability\b0\par
+The percent, over a one year time period a file will not be lost.\par
+\par
+=> \b Glacier\b0\par
+A store type that is designed for long term archival storage. 99.99999999999% Durability. May take a few hours, to a day for these objects to be available. Best used with large, bulk archived files.\par
+\par
+=> \b S3 Version Suspension\b0\par
+\pard\ri-1260 Once versioning is turned on, it can not be turned off, only suspended. All older versions remained saved from when version was turned on and newer versions are not saved when versioning is suspended.\par
+\pard\par
+=> \b Storage Availability\b0\par
+The percentage, in one years time, that an object isn't immediately available.\par
+\par
+=> \b S3 Simple Storage Sevice\par
+\b0 Amazon's bulk storage that can be accessed by any device with an internet connection. It is AWS's primary storage option that store any type of file.\par
+\par
+=> \b MFA (Security Status List)\par
+\b0 Multi-Factor Authentication is a extra layer of security, hosted by a 3rd party that is a ever changing, random 6 digit code, used with you password when logging on to your root account.\par
+\par
+=> \b S3 permissions Configuration\b0\par
+Permissions can be accessed on the bucket and object level by entering properties then permissions.\par
+\par
+=> \b Auto Scaling\b0\par
+Automatically adding or shutting down EC2 instances to give a user's application the right amount of computing power for their application.\par
+\par
+=> \b Accessing a NACL\b0\par
+The configurations to the NACL can be found under AWS resources or under the security section.\par
+\par
+=> \b Root user\b0\par
+A user is created when the AWS account is created, by default. This default user is a root user. The root user has full access to all programs, file and apps in the AWS account. Any other users created after the root user have restricted privileges by default.\par
+\par
+=> \b IOPS\b0\par
+Input, output operations per second, is the amount of data that can be retrieved from or written to an EBS per second.\par
+\par
+=> \b Steps to Create a Lambda\b0\par
+Navigate to Lambda under the Compute section. \par
+Click Get Started with Lambda\par
+Search for the code you want to run and select it.\par
+Configure triggers and click next\par
+Give your function a name, description and language.\par
+Set environment variables\par
+Set role and name the role\par
+Choose the amount of ram needed for your function\par
+Select to launch you function in a VPC or not\par
+Select KMS encryption options\par
+Click Next\par
+Review and create function\par
+\par
+=> \b Topics\b0\par
+How a admin labels and groups different end point that messages are sent to.\par
+\par
+=> \b IGW (Internet Gateway\b0 )\par
+The Internet Gateway is a combination of hardware and software that provides a connection from the internet to a VPC. Only one IGW can be attached to a VPC at a time. A IGW can not be detached from a VPC if the are AWS resources in the VPC.\par
+\par
+=> \b Additional Volume\b0\par
+A storage device added to an instance with a root volume already attached, either when the instance is created or after the creation. In short, an add on to the root volume.\par
+\par
+=> \b Steps to Create Metrics and Alarms\b0\par
+Navigate to Cloud Watch\par
+Select dash boards\par
+Select create new dash board and name it.\par
+Choose a widget type. \par
+Select a AWS service to monitor.\par
+Choose a metric.\par
+Click alarm on the dash board the create alarm.\par
+Select service.\par
+Choose a metric, then click next.\par
+Name and describe this alarm.\par
+Set a threshold \par
+Set a period in the lower right \par
+Period (a length of time the threshold is passed before triggering the alarm).\par
+Actions is where what to do if an alarm triggers.\par
+Last, hit create alarm at the bottom right.\par
+Preferences is where billing alerts are turned on and where the link to creating a billing alarm is, hit create alarm.\par
+\par
+=> \b NACL\par
+\b0 Network Access Control List is a option layer of security for a VPC that acts as a fire wall to control traffic in and out of one or more subnet. When creating a AWS cloud, a default NACL is also created and in place for the default subnets. By default the NACL allows both inbound and outbound traffic. A subnet can only be associated with one NACL.\par
+\par
+=> \b Cloud Watch\b0\par
+An AWS tool used to monitor various elements and trigger alarms of your account. Cloud watch responds to these alarms by either sending a SNS message or automatically fixes the problem with predetermined solutions. What problem triggers the alarm and how it reacts to an alarm, is determined by the admin.\par
+\par
+=> \b Steps to Log onto a New Instance\par
+\b0 Open a Terminal\par
+On the AWS your instances web page, select connect to instance.\par
+cd to the instance's downloaded or selected key.\par
+Change key permissions sudo chmod 400 key.pem\par
+ssh into public DNS, which will be given.\par
+ssh "key.pem" amozon DNS IP\par
+\par
+=> \b IAM Roles\b0\par
+Giving permissions to AWS application to allow or deny access to another AWS Application.\par
+\par
+=> \b Permissions Grantee\b0\par
+Personnel who have been granted some type of permission of a bucket or object.\par
+\par
+=> \b Deleting Root Access Keys (Security Status List)\b0\par
+If no access keys where created when the account was created, this task will be marked complete.\par
+\par
+=> \b User Groups Assigned Permissions (Security Status List)\b0\par
+Create groups with certain right to control users easier, by adding them to a group with the permission they need, instead of assigning each user the needed permissions.\par
+\par
+=> \b EBS\b0\par
+Elastic Block Storage is the storage of an instance that is independent of that instance.\par
+\par
+=> \b Home Computer vs Amazon Terminology\b0\par
+Operating System = AMIs\par
+CPU = Instance Type\par
+Hard Drive, Storage = EBS\par
+Network Card = IP Addressing \par
+Fire Wall = Security Groups\par
+Ram = Ram\par
+\par
+=> \b What Cloud Watch Monitors\b0\par
+In EC2 Cloud Watch monitors, CPU utilization, status check and disk read and write. In S3 it monitors the number of objects and bucket size. Cloud Watch also monitors the account's billing.\par
+\par
+=> \b Steps to Create a SNS Task\b0\par
+Navigate to SNS under mobile services.\par
+Select get started.\par
+Select create a topic\par
+Enter topic name and display name.\par
+Move to topic and create a subscription.\par
+Select a protocol (HTTP, e-mail, SMS) and the endpoint.\par
+The user receiving the message must confirm the message.\par
+The confirmation can be checked in the topic\par
+\par
+=> \b Folder Names created in a Bucket (REVISITED)\b0\par
+Bucket names must be at least 3 and no more than 63 characters long.\par
+Bucket names must be a series of one or more labels. Adjacent labels are separated by a single period (.). Bucket names can contain lowercase letters, numbers, and hyphens. Each label must start and end with a lowercase letter or a number.\par
+Bucket names must not be formatted as an IP address (e.g., 192.168.5.4).\par
+When using virtual hosted\endash style buckets with SSL, the SSL wildcard certificate only matches buckets that do not contain periods. To work around this, use HTTP or write your own certificate verification logic. We recommend that you do not use periods (".") in bucket names\par
+.myawsbucket -Bucket name cannot start with a period (.).\par
+myawsbucket.\tab -Bucket name cannot end with a period (.).\par
+my..examplebucket\tab -There can be only one period between labels.\par
+\par
+=> \b Security Groups\b0\par
+Similar to network access control list, security groups act as a virtual fire wall to controls traffic for one or more instances. Unlike network access control list, all the rules, set in a security group, are evaluated, not just the first one or first few then the rest of the rules discarded.\par
+\par
+=> \b Create Auto Scaling Group\b0\par
+After creating the launch configuration you will be sent to creating an auto scaling group.\par
+Name your group and select the number of instances you will be starting with.\par
+Enter you VPC and subnets.\par
+Under advanced details check receive traffic from one or more load balancers. \par
+Select your load balancer\par
+Check the ELB box if you set an ELB up.\par
+Select configure scaling policies\par
+Click use scaling policies to adjust capabilities.\par
+Select the minimum and max amount of instances.\par
+Add an alarm and configure when the alarm should start another instance.\par
+Now, add an alarm and configure when the alarm should shut down an instance.\par
+Select configure notifications.\par
+Hit add notifications, add where to send notifications and select what you want notifications of.\par
+Add tags if needed\par
+Review and create the auto scaling group.\par
+\par
+=>\b  High Availability\b0\par
+Spreading data across different availability zones to insure access to it even in the case of a local disaster.\par
+\par
+\b => Bucket Naming\b0\par
+Buckets names can not match any other bucket name on all of AWS. Names must be between 3 and 63 characters in length. Names can only contain lower-case letters, numbers and hyphens. Names can not be in the form of an ip address (192.168.1.1)\par
+\par
+\b => Public IP Addressing\b0\par
+A public IP address is set for an instance, depending on the VPC subnet settings. The default VPC subnet settings are configured for instances to have a public IP address. Pubic IPs are required for internet access.\par
+\par
+\b => Snapshot\b0\par
+A stored image of a volume, used as a backup or to create a duplicate.\par
+\par
+=> \b Instance Type\par
+\b0 The compute, memory and storage capabilities of an AWI instance.\par
+\par
+=> \b Object Lifecycle\b0\par
+A set of rules to automate the changing of storage classes, based on usage needs, to save cost. A lifecycle policy can be applied to a bucket, a folder or just an object and can be changed or deleted at anytime.\par
+\par
+=> \b Public Subnets\par
+\b0 Sub networks that have access to the internet.\par
+\par
+=> \b Root volume\b0\par
+Every instance must have a root volume, which is the main storage device for an instance.\par
+\par
+=> \b Buckets\b0\par
+Folder are referred to as buckets in S3. The buckets store sub-folders, referred to as just folders. Folders store files which are referred to as objects. Buckets store folders, folders store objects. A region must be selected when creating a bucket.\par
+\par
+=> \b Bucket Configuration\b0\par
+Select a bucket to configure or find information about. Select the properties button and a list will appear with choices to configure your bucket or view information.\par
+\par
+=> \b IAM User Policies\b0\par
+The process of granting users access or restrictions from AWS applications.\par
+\par
+=> \b Instance Family\b0\par
+A way to categorize instance types base on what the instance usage depends on, CPU, memory, storage, a combination of any two or all three. It also depends on the number of virtual host, memory and storage needed to run the virtual host.\par
+\par
+=> \b RDS\b0\par
+Relational Database Service is a resizeable SQL database service with a lot of database engines. \par
+Amazon Aurora\par
+MySQL\par
+MariaDB\par
+PostgreSQL\par
+Oracle\par
+Microsoft SQL Server\par
+\par
+=> \b VPC\par
+\b0 An AWS Virtual Private Cloud is a private sub-section an administrator controls. This is where chosen AWS resources are controlled, as well as users, groups and roles.\par
+\par
+=> \b SNS\b0\par
+Simple Notification Service is the automation of notifications (e-mails, text messages)based on events in a user's AWS account.\par
+\par
+=> \b Accessing a VPC in AWS\b0\par
+The VPC configuration page is located under Networking in the AWS Services section.\par
+\par
+=> \b AMI Pricing Options\b0\par
+Community AMIs = Free Operating system and support software.\par
+AWS Marketplace AMIs = Pay to use AMIs, packaged with licenced software.\par
+My AMIs = Personally created AMIs.\par
+\par
+=>\b  Launch Configuration (Auto Scaling Component)\par
+\b0 The blueprints of your server. In other words, a user's template of the choosen AWS services that make up the user's server. This template is needed by auto scaling to start another server when demand gets to high for the current servers to handle..\par
+\par
+=> \b Creating A Bucket\par
+\b0 On the AWS bucket page, select create. A window will display asking to name your bucket and select a region to store this bucket. Next select the create button and either the bucket will be created or you will be prompted to change the name.\par
+\par
+=> \b RDS vs DynamoDB\b0\par
+RDS is a relational database also known as SQL.\par
+DynamoDB is a non-relational database known as a NoSQL.\par
+\par
+=> \b Creating a Launch Configuration\b0\par
+Navigate to EC2 \par
+Listed on the left scroll bar, under auto scaling, click launch configuration.\par
+Click auto scaling group\par
+Then hit create launch configuration. \par
+Select an AMI, then an instance type.\par
+Name your launch configuration.\par
+Select advanced option.\par
+Make sure you have a public IP and add any scripts.\par
+Next click add storage and configure as you like.\par
+Select add security groups.\par
+Name, describe and add security rules.\par
+Review and create the launch configuration.\par
+Assign a key pair and hit create launch configuration.\par
+\par
+=> \b Thresholds\b0\par
+A limit set that will trigger a Cloud Watch alarm.\par
+\par
+=> \b SQL vs NoSQL\b0\par
+SQl is structured like a spreadsheet (columns and rows) that stores more spreadsheet structured data like a contact list. \par
+NoSQL databases stores less structured data such as documents and images.\par
+\par
+=> \b Steps for Setting a Domain with Route 53\b0\par
+Route 53 is under Network and Content Delivery\par
+Navigate to Route 53\par
+Click register a domain\par
+Then click register a domain again\par
+Type in your new or transferring domain name\par
+Add your name to the cart and continue\par
+Fill in your contact information\par
+Choose a privacy policy then click continue\par
+Click go to domains \par
+This page list all your domain names\par
+Your domain may take up to 20 minutes to process.\par
+\par
+=> \b Inbound and Outbound Rules\b0\par
+Rules are prioritized by lowers to highest number so the first rule is always run no mater what it is. Then the second rule is run and if the second rule denies any of the first rule it will be over written because the first rule has already ran. By default the first rule is to let all traffic though and the second is to deny all traffic. The second rule can not be deleted.\par
+\par
+=> \b S3-IA (Infrequent Access\b0 )\par
+A storage type which object don't need to be accessed often. 99.99999999999% Durability, 99.90% Availability. Best used for files accessed once a week of less.\par
+\par
+=> \b Failure Tolerance\b0\par
+The ability to withstand data failures with little or no down time.\par
+\par
+=> \b AWS Data Center\b0\par
+A building that contains the running infastructure of the AWS cloud.\par
+\par
+=> \b Private IP Addressing\b0\par
+All EC2 instances have a private address, This makes talking to other devices in a VCP possible.\par
+\par
+=> \b EC2 Pricing Options\b0\par
+On Demand = Spin up an instance when it is needed and closes it when is not needed. The most expensive.\par
+Reserved = Pay for an instance for a certain amount of time. Guaranteed pricing.\par
+Spot = Set a price you want to pay for an instance, if extra instances become available, at that price, A user is available to use this instance, until the price rises above the user's bid. Cheap but unreliable.\par
+\par
+=> \b Default VPC\b0\par
+When creating a AWS cloud a default VPC is created for you with an internet gateway, router table, a network access control list and subnets.\par
+\par
+=> \b S3 Versioning\b0\par
+A S3 feature that tracks and store older versions of an object for use. Turning on or off versioning is done at the bucket level and applies to all objects in the bucket. This is accessed in properties, then versioning. By default versioning is turned off. Unless specified, newer versions will be saved as standard class, not saved the same as the older version.\par
+\par
+=> \b Server Less\b0\par
+The ability to run code without provisioning or managing servers\par
+\par
+=> \b AWS Root Security Status (Security Status List)\b0\par
+After creating a AWS account, it is best practice to complete the items on the security status check list, in order to secure the root user.\par
+\par
+=> \b Connect to AWS DB with SSH in MySQL Workbench\b0\par
+Download MySQL Workbench.\par
+Open MySQL Workbench.\par
+Set new connection.\par
+Give the DB name to connect to.\par
+Connection Method is TCP/IP over SSH\par
+Enter SSH hostname, the IP of the EC2 instance.\par
+Enter EC2 username to connect to EC2 instance.\par
+Enter SSH Password (Might not be one)\par
+Enter SSH key, probably stored in a file on the user's computer, when the EC2 instance was created\par
+Enter MySQL host name which is your DB endpoint.\par
+Enter port 3306\par
+Enter user name and password of DB instance.\par
+Test Connection\par
+If the connection fails check the Security Groups, Route Tables, NACL and Internet Gateway.\par
+The lesson example found the inbound security group's source was only letting one IP Address in. Change this IP address to 0.0.0.0/0\par
+\par
+=> \b ELB\b0\par
+Elastic Load Balancer is software that divides users, trying to access an AWS website, among multiple web servers. It also identifies healthy and unhealthy web servers and routes traffic accordingly.\par
+\par
+=> \b AMIs\b0\par
+Amazon Machine Images are the programs that run an instance. The components of an AMI include, a root volume template, launch permissions and block device or hard drive mapping . The same AMI instance is able to be deployed for as many instances needed, like a cookie cutter.\par
+\par
+=> \b Lambda\b0\par
+AWS's tool for server less computing. Lambda sends a client the perfect amount of computing power to run an application's code and this is all a user is charged for.\par
+\par
+=> \b Subscribers\b0\par
+Where the topic is sent, an e-mail or a phone number for a text, the endpoint.\par
+\par
+=> \b DynamoDB\b0\par
+A NoSQL database option, AWS offers. Fast and flexible with single-digit, millisecond latency.\par
+\par
+=> \b Activate MFA on Root Account (Security Status List\b0 )\par
+Activate Multi-Factor Authentication though either a virtual MFA device, such as a smart phone application or Google Authentications or the use of a fob key, a usb, storage device you can order though AWS. The instructions for this are in a pull down arrow on task in the security status list.\par
+\par
+=> \b IP Addressing\b0\par
+To provide an EC2 instance with a public IP address.\par
+\par
+=>\b  Setting Storage Class with Newly Uploaded Objects\b0\par
+Just before pressing the upload button, when uploading a file, you have an option to set the objects details. This is where the storage class of the object can be set with new uploaded files.\par
+\par
+=> \b S3 Permissions\b0\par
+Controlling who can view, access and/or use on the buckets level or controlling who can view, access, use and/or download on the object level.\par
+\par
+=> \b Subnet\b0\par
+A Sub Network is all the computers in a certain location. Your home network is a sub network of your internet providers. Subnets must be associated with a route table. A subnet is located in one availability zone.\par
+\par
+=> \b IAM\par
+\b0 Identity and Assess Management is configuring users, groups, policies and roles on an AWS cloud.\par
+\par
+=> \b Set Storage Class with AWS Stored Objects\b0\par
+Storage class can be changed with an already uploaded object (except glacier) in the object's properties, details section.\par
+\par
+=> \b Route Tables\b0\par
+A set of rules that are used to determined where a route is connected. There can be multiple route tables in a VPC. A route table can not be deleted if it has dependencies associated with it.\par
+\par
+=> \b AWS SSH Tunneling (Creating a Database)\b0\par
+Connecting from an outside computer to create a database inside a private subnet. Using the public IP address of the EC2 instance will give us access to the private subnet.\par
+\par
+=> \b S3 Storage Classification\b0\par
+A in way to categorize object in S3. By default objects are classified as standard.\par
+\par
+=> \b AWS Regions\b0\par
+Groupings of Availability Zones, spread throughout the globe. When setting up AWS, regions should be picked by the shortest distance the data has to travel from region to customer to reduce latency.\par
+\par
+=> \b IAM Group Policies\b0\par
+Giving access or restricting to AWS applications for users groups.\par
+\par
+\ul\b Some of it are repeats :-\ulnone\b0\par
+\par
+=> \b DynamoDB (definition)\b0\par
+DynamoDB is AWS's NoSQL database service\par
+\par
+=> \b AMI (definition & abbreviation)\b0\par
+1)AMI = Amazon Machine Image\par
+2) A preconfigured package that is required to launch an EC2 instance.\par
+3) It includes the operating system, software packages, and other required settings.\par
+\par
+=> \b S3 storage classes (list)\b0\par
+1)Standard\par
+2) Reduced Redundancy\par
+3) Infrequent Access\par
+4) Glacier\par
+\par
+=>\b  IAM is used to manage?\par
+\b0 Users\par
+2) Groups\par
+3) Policies\par
+4) Roles\par
+\par
+=> \b Main components of S3\b0\par
+1) Buckets\par
+2) Folders\par
+3) Objects\par
+\par
+=> \b IAM policies\b0\par
+How you grant users access to AWS services and resources.\par
+\par
+\par
+=> \b Main SNS Components\b0\par
+1) Topics, \par
+2) Subscriptions, \par
+3) Publishers\par
+\par
+=> \b S3 Buckets (definition\b0 )\par
+The root level container for storing objects.\par
+\par
+=> \b DNS Server (definition/purpose)\b0\par
+-DNS servers are used as a look-up service to translate web domain into IP addresses.\par
+\par
+=> \b Infrequent Access Storage (attributes)\b0\par
+1)Designed for objects that you do not need to access frequently, but must be immediately available when accessed. \par
+2) 99.999999999% durability (11 nines)\par
+3) 99.90% availability\par
+4) Is less expensive then standard or RRS.\par
+\par
+=> \b EBS (definition & abbreviation)\b0\par
+1)EBS = Elastic Block Store\par
+2) Is a storage volume (think of it as the hard drive for the EC2 instance).\par
+\par
+=> \b S3 Permissions (definition)\b0\par
+Are what allow you to have granular control over who can view, access and use specific buckets and objects.\par
+\par
+=> \b ELB (definition & abbreviation)\par
+\b0 1)ELB = Elastic Load Balancer\par
+2) An ELB evenly distributes traffic between EC2 instances that are associated with it.\par
+\par
+=> \b Auto Scaling (definition)\b0\par
+Automates the process of adding (scaling up) OR removing (scaling down) EC2 instances based on traffic demand for your application.\par
+\par
+=> \b Availability Zones\b0\par
+Geographically isolated locations within a Region that contain an AWS data center.\par
+\par
+=> \b IP Addressing (definition)\b0\par
+Providing an EC2 instance with a public IP address\par
+\par
+=> \b S3 Versioning\b0\par
+Is a feature that keeps track of and stores all old/new versions of of object.\par
+\par
+=> \b Instance types (definition & abbreviation)\par
+\b0 Is the compute power of your instance - and includes:\par
+1) CPU\par
+2) Ram\par
+3) Bandwidth \par
+4) Storage optimizations\par
+\par
+=> \b EC2 (definition & abbreviation)\b0\par
+1)\tab EC2 = Elastic Cloud Compute\par
+2) Think of EC2 as your basic desktop computer (for reference)\par
+3) It is scalable compute capacity.\par
+\par
+=> \b Reduced Redundancy Storage (attributes)\b0\par
+1)Designed for non-critical, reproducible objects.\par
+2) 99.99% durability\par
+3) 99.99% availability\par
+4) Is less expensive than standard storage class\par
+\par
+=> \b Regions (definition)\b0\par
+Regions are groupings of Availability Zones that are located in various parts of the world.\par
+\par
+=> \b S3 Bucket naming rules\b0\par
+1) Bucket names MUST be unique across all of AWS.\par
+2) Bucket names must be 3-63 characters in length.\par
+3) Bucket names can only contain lowercase letters, numbers and hyphens.\par
+4) Bucket names must NOT be formatted as an IP address.\par
+\par
+=> \b IAM Roles\b0\par
+How you grant an AWS resource access to other AWS resources or services.\par
+\par
+=>\b  MFA (definition & abbreviation)\par
+\b0 1) MFA = Multi Factor Authentication\par
+2) MFA is an additional layer of security on your ROOT account.\par
+3) It takes the form of a continually changing, random six digit number.\par
+\par
+=> \b Glacier Storage Class (attributes)\b0\par
+1) Designed for long-term archival storage.\par
+2) May take several hours for objects stored in Glacier to be retrieved.\par
+3) 99.999999999% durability (11 nines)\par
+4) Is the cheapest storage class.\par
+\par
+=> \b IAM Groups\b0\par
+A convenient way to assign policies to multiple users at once.\par
+\par
+=> \b VPC (definition & abbreviation)\par
+\b0 1) VPC = Virtual Private Cloud\par
+2) A private, logically isolated sub-section of AWS that you control.\par
+3) A VPC is where you provision and manage AWS resources - such as EC2 or RDS/DynamoDB instances.\par
+\par
+=> \b Lambda (definition)\b0\par
+-Lambda is AWS's serverless compute platform\par
+-It allows you to run code without provisioning or managing servers.\par
+-Lambda only executes your code when needed, and scales automatically. \par
+-Lambda runs your code on highly-available compute infrastructure.\par
+\par
+=> \b Free Tier (definition)\b0\par
+AWS Free Tier refers to the limited free use of AWS services.\par
+\par
+=> \b S3 (definition & abbreviation)\b0\par
+1) S3 = Simple Storage Service\par
+2) An online, bulk storage service that you can access from almost any device.\par
+\par
+=>\b Main CloudWatch Components\b0\par
+1) Metrics\par
+2) Alarms\par
+\par
+=> \b Standard Storage Class (attributes)\b0\par
+1) Designed for general, all-purpose storage\par
+2) Is the default storage option\par
+3) 99.999999999% durability (11 nines)\par
+4) 99.99% availability\par
+5) Is the most expensive storage class\par
+\par
+=> \b SNS (definition & abbreviation\b0 )\par
+1) SNS = Simple Notification Service\par
+2) Allows you to automate the sending of notifications based on events that occur inside your AWS account.\par
+\par
+=> \b CloudWatch (definition)\b0\par
+Is a service that allows you to monitor various elements of your AWS account.\par
+\par
+=> \b Main Components of EC2\b0\par
+1) AMI\par
+2) Instance Types\par
+3) Storage (EBS)\par
+4) Security Groups\par
+5) IP Addressing\par
+\par
+=> \b NACLs (definition & abbreviation)\par
+\b0 1) NACL = Network Access Control Lists\par
+2) A network access control list (NACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic IN and OUT of one or more SUBNETS.\par
+3) It is security on the SUBNET LEVEL.\par
+\par
+=> \b DNS (abbreviation)\b0\par
+DNS = Domain Name System\par
+\par
+\b => IAM User\b0\par
+How you grant access to and manage other users in your AWS account.\par
+\par
+=> \b IOPS (definition & abbreviation)\b0\par
+1) IOPS = Input/Output per Second\par
+2) The amount of data that can be written to or retrieved from an EBS volume per second.\par
+\par
+=> \b Route Tables (definition)\b0\par
+A route table contains a set of rules, called routes, that are used to determine where network traffic is directed.\par
+\par
+=> \b Main VPC Components\b0\par
+1) IGW\par
+2) Route Table\par
+3) Network Access Control List\par
+4) Subnets\par
+\par
+=> \b Route 53 (definition)\b0\par
+AWS service where you configure and manage web domains and DNS records.\par
+\par
+=> \b Subnets (definition)\par
+\b0 1) A sub-section of a network that you provision AWS resources in and has it's own level of security (NACLs).\par
+\par
+=> \b RDS (definition & abbreviation)\b0\par
+1) RDS = Relational Database Service\par
+2) RDS is AWS's SQL database service\par
+\par
+=> \b IAM "root" user\b0\par
+The "root" user is the user created when you create an AWS account. It has FULL admin rights by default.\par
+\par
+=> \b IGW (definition & abbreviation)\b0\par
+1) IGW = Internet Gateway, \par
+2) The IGW provides your VPC with route/connection to the Internet (anything outside of the VPC).\par
+\par
+=> \b IAM (definition & abbreviation)\b0\par
+1) IAM = Identity & Access Management, \par
+2) IAM is where you manage your AWS users and their access to AWS accounts and services.\par
+\par
+=> \b Object Lifecycle (definition)\b0\par
+Is a set of rules that automate the migration of an object's storage class to a different storage class (or deletion), based on specified time intervals.\par
+\par
+=> \b Security Groups\b0\par
+1) Very similar to NACLs - security groups are a firewall that are found on the INSTANCE level.\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+}
+ 
